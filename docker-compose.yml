@@ -1,0 +1,48 @@
+version: "3.8"
+services:
+  mysqldb:
+    image: mysql
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - MYSQL_ROOT_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+      - MYSQL_DATABASE=$MYSQLDB_DATABASE
+    ports:
+      - $MYSQLDB_LOCAL_PORT:$MYSQLDB_DOCKER_PORT
+    volumes:
+      - db:/var/lib/mysql
+  frontend_tiket:
+    container_name: frontend_tiket
+    build:
+      dockerfile: Dockerfile
+      context: ./frontend
+    volumes:
+      - ./frontend:/frontend
+    ports:
+      - 3000:3000
+
+  backend_tiket:
+    container_name: backend_tiket
+    restart: unless-stopped
+    depends_on:
+      - mysqldb
+    env_file: ./.env
+    build:
+      dockerfile: Dockerfile
+      context: ./backend
+    volumes:
+      - ./backend:/backend
+    ports:
+      - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
+    environment:
+      - DB_HOST=mysqldb
+      - DB_USER=$MYSQLDB_USER
+      - DB_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+      - DB_NAME=$MYSQLDB_DATABASE
+      - DB_PORT=$MYSQLDB_DOCKER_PORT
+      - REFRESH_TOKEN_SECRET=$REFRESH_TOKEN_SECRET
+      - ACCES_TOKEN_SECRET=$ACCES_TOKEN_SECRET
+    stdin_open: true
+    tty: true
+volumes:
+  db:
