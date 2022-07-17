@@ -8,7 +8,6 @@ import Reservasi from "../route/ReservasiRoute.js"
 import Tamu from "../route/TamuRoute.js";
 import Tes from "../route/Tes.js";
 
-
 export const semua = express();
 semua.use(FasilitasRoute);
 semua.use(Kamar);

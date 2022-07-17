@@ -39,5 +39,6 @@ const Reservasi = db.define('reservasi', {
 }, {
   FreezeTableName: true
 })
+// Reservasi.sync()
 
 export default Reservasi

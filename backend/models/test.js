@@ -16,4 +16,5 @@ const Tes = db.define('tes', {
   FreezeTableName: true
 })
 
+// Tes.sync()
 export default Tes

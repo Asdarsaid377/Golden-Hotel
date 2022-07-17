@@ -1,10 +1,12 @@
 import Tamu from "../models/tamumodel.js"
 import { v4 } from "uuid"
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 
 export const getTamu = async (req, res) => {
      try {
-          const response = await Tamu.findAll();
+          const response = await Tamu.findAll({
+               attributes: ['id_tamu', 'nama', 'alamat', 'no_telpon', 'no_ktp', 'email', 'username', 'status_tamu']
+          });
           res.status(200).json(response)
      } catch (error) {
           console.log(error.message);

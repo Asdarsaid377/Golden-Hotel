@@ -33,5 +33,6 @@ const Tamu = db.define('tamu', {
 }, {
   FreezeTableName: true
 })
+// Tamu.sync();
 
 export default Tamu

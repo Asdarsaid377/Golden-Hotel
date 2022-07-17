@@ -1,6 +1,7 @@
 import Users from "../models/usermodel.js";
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
+// import { base64encode } from "nodejs-base64";
 
 export const getUsers = async (req, res) => {
      try {
@@ -12,6 +13,7 @@ export const getUsers = async (req, res) => {
           console.log(error);
      }
 }
+
 export const Register = async (req, res) => {
      const { name = "", email = "", password = "", confirmpassword = "" } = req.body
      if (name == "") return res.status(400).json({ msg: "Nama Harus Di Isi " })
@@ -47,6 +49,10 @@ export const Login = async (req, res) => {
           const accessToken = jwt.sign({ userId, name, email }, process.env.ACCESS_TOKEN_SECRET, {
                expiresIn: '1d'
           });
+          // const encode = base64encode(JSON.stringify(accessToken))
+          // res.status(200).json({ Data: encode });
+
+
           const refreshToken = jwt.sign({ userId, name, email }, process.env.REFRESH_TOKEN_SECRET, {
                expiresIn: '1d'
           });

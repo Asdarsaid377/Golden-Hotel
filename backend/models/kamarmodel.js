@@ -25,4 +25,5 @@ const Kamar = db.define('kamar', {
   FreezeTableName: true
 })
 
+// Kamar.sync();
 export default Kamar

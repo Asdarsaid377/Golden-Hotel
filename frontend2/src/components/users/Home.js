@@ -1,9 +1,9 @@
 import React from 'react'
-import CardHotel from './Card/CardHotel'
-import About from './users/About'
-import ContactUs from './users/ContactUs'
-import Footer from './users/Footer'
-import Navbar from './users/Navbar'
+import CardHotel from '../Card/CardHotel'
+import About from './About'
+import ContactUs from './ContactUs'
+import Footer from './Footer'
+import Navbar from './Navbar'
 
 
 function Home() {

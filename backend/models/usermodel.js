@@ -22,4 +22,6 @@ const Users = db.define('users', {
      FreezeTableName: true
 })
 
+// Users.sync(); 
+
 export default Users

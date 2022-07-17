@@ -15,9 +15,9 @@ services:
     container_name: frontend_tiket
     build:
       dockerfile: Dockerfile
-      context: ./frontend
+      context: ./frontend2
     volumes:
-      - ./frontend:/frontend
+      - ./frontend2:/frontend2
     ports:
       - 3000:3000
 

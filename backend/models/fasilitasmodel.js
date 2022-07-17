@@ -16,5 +16,5 @@ const Fasilitas = db.define('fasilitas', {
   FreezeTableName: true
 })
 
-
+// Fasilitas.sync();
 export default Fasilitas

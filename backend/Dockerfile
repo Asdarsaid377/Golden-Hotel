@@ -1,7 +1,11 @@
-FROM node
+FROM node:16.9.0
+
 WORKDIR /backend
-COPY packa*.json ./
-RUN npm add -g nodemon
+
+COPY package*.json ./
+
 RUN npm install
+
 COPY . .
-CMD nodemon index
+
+CMD [ "node", "index","nodemon" ]

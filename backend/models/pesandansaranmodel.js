@@ -21,5 +21,6 @@ const Pesan = db.define('pesan', {
 }, {
   FreezeTableName: true
 })
+// Pesan.sync()
 
 export default Pesan

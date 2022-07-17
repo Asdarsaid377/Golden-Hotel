@@ -19,4 +19,5 @@ const Namabank = db.define('bank', {
   FreezeTableName: true
 })
 
+// Namabank.sync();
 export default Namabank

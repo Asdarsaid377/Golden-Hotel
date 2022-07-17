@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import jwt_decode from "jwt-decode";
-import Navbar from '../components/users/Navbar'
+import Navbar from './Navbar'
 import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {

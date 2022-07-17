@@ -27,4 +27,5 @@ const Konfirmasi = db.define('konfirmasi', {
   FreezeTableName: true
 })
 
+// Konfirmasi.sync();
 export default Konfirmasi
