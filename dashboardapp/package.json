@@ -1,0 +1,70 @@
+{
+  "name": "material-tailwind-dashboard-react",
+  "version": "1.1.0",
+  "private": true,
+  "homepage": "https://demos.creative-tim.com/material-tailwind-dashboard-react/#/",
+  "dependencies": {
+    "@heroicons/react": "^1.0.6",
+    "@material-tailwind/react": "^0.3.4",
+    "@react-google-maps/api": "^2.1.1",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.27.2",
+    "chart.js": "2.9.4",
+    "heroicons-react": "^1.4.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.4.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-to-print": "^2.14.7",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "build:tailwind": "postcss ./src/assets/styles/index.css -o ./src/assets/styles/tailwind.css --env production",
+    "watch:tailwind": "postcss ./src/assets/styles/index.css -o ./src/assets/styles/tailwind.css -w",
+    "start:react": "react-scripts start",
+    "start": "npm-run-all -p watch:tailwind start:react",
+    "jalankan":"react-scripts --openssl-legacy-provider start",
+    "build": "npm run build:tailwind && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "npm:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "yarn:clean": "rm -rf node_modules/ && rm -rf package-lock.json && yarn install && yarn start"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.13",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.4"
+  },
+  "optionalDependencies": {
+    "@babel/core": "7.14.0",
+    "typescript": "4.2.4"
+  },
+  "description": "![version](https://img.shields.io/badge/version-1.1.0-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/material-tailwind-dashboard-react.svg?maxAge=2592000)](https://github.com/creativetimofficial/material-tailwind-dashboard-react/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/material-tailwind-dashboard-react.svg?maxAge=2592000)](https://github.com/creativetimofficial/material-tailwind-dashboard-react/issues?q=is%3Aissue+is%3Aclosed)",
+  "main": "postcss.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
