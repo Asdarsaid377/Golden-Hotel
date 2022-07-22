@@ -9,7 +9,6 @@ import ProfilePicture from 'assets/img/team-1-800x800.jpg';
 
 export default function AdminNavbar({ showSidebar, setShowSidebar }) {
     const location = useLocation().pathname;
-
     return (
         <nav className="bg-light-blue-500 md:ml-64 py-6 px-3">
             <div className="container max-w-full mx-auto flex items-center justify-between md:pr-8 md:pl-10">
@@ -26,9 +25,8 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
                         <Icon name="menu" size="2xl" color="white" />
                     </Button>
                     <div
-                        className={`absolute top-2 md:hidden ${
-                            showSidebar === 'left-0' ? 'left-64' : '-left-64'
-                        } z-50 transition-all duration-300`}
+                        className={`absolute top-2 md:hidden ${showSidebar === 'left-0' ? 'left-64' : '-left-64'
+                            } z-50 transition-all duration-300`}
                     >
                         <Button
                             color="transparent"

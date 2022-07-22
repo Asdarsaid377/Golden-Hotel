@@ -10,6 +10,7 @@ export const refreshToken = async (req, res) => {
                     refresh_token: refreshToken
                }
           });
+
           if (!user[0]) return res.sendStatus(403);
           jwt.sign(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
                if (err) return res.sendStatus(403);
@@ -22,6 +23,6 @@ export const refreshToken = async (req, res) => {
                res.json({ accessToken });
           })
      } catch (error) {
-
+          console.log("Unauthorized")
      }
 }

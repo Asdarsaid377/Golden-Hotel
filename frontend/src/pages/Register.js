@@ -19,7 +19,7 @@ function Register() {
         password: password,
         confirmpassword: confirmpassword
       })
-      navigate.push("/")
+      navigate.push("/login")
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
