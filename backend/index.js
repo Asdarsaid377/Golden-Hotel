@@ -9,7 +9,6 @@ import cors from "cors";
 const app = express();
 dotenv.config();
 const port = process.env.NODE_LOCAL_PORT;
-// const a = async () => {
 try {
     db.authenticate();
     console.log('Database Connected');

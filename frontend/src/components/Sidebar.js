@@ -1,20 +1,30 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import AdminNavbar from './AdminNavbar';
-import Icon from '@material-tailwind/react/Icon';
 import H6 from '@material-tailwind/react/Heading6';
 import { FaUser } from "react-icons/fa";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { FaBed } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { MdDashboard } from "react-icons/md";
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export default function Sidebar() {
+    const navigate = useHistory();
     const [showSidebar, setShowSidebar] = useState('-left-64');
+    const Logout = async () => {
+        try {
+            await axios.delete("http://localhost:5000/logout");
+            navigate.push("/")
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
     return (
         <>
-
             <AdminNavbar
                 showSidebar={showSidebar}
                 setShowSidebar={setShowSidebar}
@@ -29,6 +39,7 @@ export default function Sidebar() {
                         target="_blank"
                         rel="noreferrer"
                         className="mt-2 text-center w-full inline-block"
+
                     >
                         <H6 color="gray">Golden Hotel</H6>
                     </a>
@@ -100,9 +111,9 @@ export default function Sidebar() {
                                     rel="noreferrer"
                                     className="flex items-center justify-center gap-4 text-sm font-light py-3"
                                 >
-                                    <button>
+                                    <Link onClick={Logout} to="/">
                                         Logout
-                                    </button>
+                                    </Link>
 
                                 </a>
                             </li>

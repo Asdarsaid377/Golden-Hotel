@@ -12,7 +12,7 @@ export default function CardTable() {
 
     return (
         <Card >
-            <CardHeader color="blue" contentPosition="center">
+            <CardHeader color="blue" contentPosition="left">
                 <h2 className="text-white text-2xl font-semibold">Tamu</h2>
             </CardHeader>
             <CardBody>
@@ -60,8 +60,8 @@ export default function CardTable() {
                                 <td>Mr.Nobody377</td>
                                 <td>Long Stay</td>
                                 <td className='flex gap-5 p-5'>
-                                    <button type='button'><BiEdit /></button>
-                                    <button type='button' onClick={() => { if (window.confirm('Apakah Anda yakin menghapus ini?')); }}><BsTrash /></button>
+                                    <button type='button' onClick={() => { if (window.confirm('Apakah Anda yakin menghapus ini?')); }}><BsTrash color='red' /></button>
+                                    <button type='button'><BiEdit color='green' /></button>
                                 </td>
                             </tr>
                         </tbody>

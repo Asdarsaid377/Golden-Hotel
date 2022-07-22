@@ -14,6 +14,19 @@ export const getUsers = async (req, res) => {
      }
 }
 
+export const deleteUsers = async (req, res) => {
+     try {
+          await Users.destroy({
+               where: {
+                    id: req.params.id
+               }
+          })
+          res.status(200).json({ msg: "Pesan Berhasil Dihapus" })
+     } catch (error) {
+          console.log("Tidak Bisa Menghapus Users")
+     }
+}
+
 export const Register = async (req, res) => {
      const { name = "", email = "", password = "", confirmpassword = "" } = req.body
      if (name == "") return res.status(400).json({ msg: "Nama Harus Di Isi " })

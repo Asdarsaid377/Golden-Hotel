@@ -8,7 +8,8 @@ import Login from 'pages/Login';
 import Home from 'pages/Home';
 import TableKamar from 'pages/Kamar';
 import FormUser from 'components/Form/FormUser';
-// Tailwind CSS Style Sheet
+import NotFound404 from 'pages/NotFound404';
+
 import 'assets/styles/tailwind.css';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -27,6 +28,7 @@ function App() {
                     <Route exact path="/tablestamu" component={TableTamu} />
                     <Route exact path="/tableskamar" component={TableKamar} />
                     <Route exact path="/formuser" component={FormUser} />
+                    <Route exact path="*" component={NotFound404} />
                 </Switch>
             </BrowserRouter>
         </>
