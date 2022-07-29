@@ -3,17 +3,17 @@ import CardHotel from '../components/Card/CardHotel'
 import About from './About'
 import ContactUs from './ContactUs'
 import Footer from '../components/Footer'
-import Navbar from './Navbar'
+import Navbari from './Navbar'
 import axios from "axios"
 
 function Home() {
   const [hotels, setHotels] = React.useState([])
   const [isLoading, setIsLoading] = React.useState(false)
 
-  
+
   return (
     < div className='bg-gray-600' >
-      <Navbar />
+      <Navbari />
       <div className='py-8 justify-center items-center text-3xl w-full h-full'>
         <h1 className='text-center text-yellow-500 font-bold w-auto min-h-full'>Hotel Populer</h1>
       </div>

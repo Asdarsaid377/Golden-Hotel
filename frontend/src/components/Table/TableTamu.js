@@ -1,21 +1,44 @@
 import Card from '@material-tailwind/react/Card';
 import CardHeader from '@material-tailwind/react/CardHeader';
 import CardBody from '@material-tailwind/react/CardBody';
-import { BsTrash } from "react-icons/bs"
+import { BsTrash, BsCalendar3 } from "react-icons/bs"
 import { BiEdit } from "react-icons/bi"
-import ReactToPrint from 'react-to-print';
 import React, { useRef } from 'react';
-import About from 'pages/About';
-import { Link } from 'heroicons-react';
-
+import DatePicker, { Calendar } from 'react-multi-date-picker';
 export default function CardTable() {
+    const datePickerRef = useRef(null);
 
     return (
         <Card >
             <CardHeader color="blue" contentPosition="left">
                 <h2 className="text-white text-2xl font-semibold">Tamu</h2>
             </CardHeader>
+            <div className='items-center gap-3 justify-items-start flex p-3'>
+                <span>Tanggal Chekin</span>
+                <DatePicker ref={datePickerRef}>
+                    <button
+                        style={{ margin: "2px", color: "red" }}
+                        onClick={() => datePickerRef.current.closeCalendar()}
+                    >
+                        close
+                    </button>
+                </DatePicker>
+                <span>Tanggal Chekout</span>
+                <DatePicker ref={datePickerRef}>
+                    <button
+                        className='border-none'
+                        style={{ margin: "2px", color: "red" }}
+                        onClick={() => datePickerRef.current.closeCalendar()}
+                    >
+                        close
+                    </button>
+                </DatePicker>
+                <a href='/formtamu'>
+                    <button to="/asjdkadsjksajd" className="text-white justify-end flex ml-12 p-2 just rounded-lg border-none bg-purple-500 hover:bg-blue-700"> Add Tamu</button>
+                </a>
+            </div>
             <CardBody>
+
                 <div className="overflow-x-auto items-center">
                     <table className="items-center w-full bg-transparent border-collapse">
                         <thead className='ml'>

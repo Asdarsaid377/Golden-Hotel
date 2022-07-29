@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Asdarsaid377/HoteelsBokings-Nodejs-React/issues"
   },
-  "homepage": "https://github.com/Asdarsaid377/HoteelsBokings-Nodejs-React#readme"
+  "homepage": "https://github.com/Asdarsaid377/HoteelsBokings-Nodejs-React#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "react-bootstrap": "^2.4.0",
+    "react-calendar": "^3.7.0"
+  }
 }

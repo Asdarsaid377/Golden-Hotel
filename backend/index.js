@@ -17,6 +17,7 @@ try {
     console.log(error.message);
 }
 
+
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' })); //Akses Cors ke frontend
 app.use(cookieParser());
 app.use(express.json());

@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiOutlineShoppingCart } from "react-icons/ai"
 
-function Navbar() {
+function Navbari() {
   return (
     <div className='sticky top-0 opacity-80'>
       <nav className="bg-gray-800 fi border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800 shadow-md sticky top-0 p-5 drop-shadow shadow-gray-700">
@@ -17,7 +17,7 @@ function Navbar() {
           <div className="hidden w-full md:block md:w-auto gap-3" id="mobile-menu">
             <ul className="flex flex-col gap-x-px mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium px-4">
               <li>
-                <a href="#" className="block py-2 pr-4 pl-3 text-white rounded md:bg-transparent md:text-yellow-500 md:p-0 dark:text-white active:" aria-current="page">Home</a>
+                <a href="#" className="block py-2 pr-4 pl-3 text-white rounded active:text-white md:bg-transparent hover:text-white md:text-yellow-500 md:p-0 dark:text-white active:" aria-current="page">Home</a>
               </li>
               {/* <li>
                 <a href="#" className="block py-2 pr-4 pl-3 text-gray-500 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 dark:text-gray-400 md:dark:hover:text-yellow-500 dark:hover:bg-gray-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-500">About</a>
@@ -27,11 +27,12 @@ function Navbar() {
                   <AiOutlineShoppingCart className='text-yellow-500 hover:text-white font-bold text-lg mb-1' /></a>
               </li>
               <li>
-                <a href="/login" className="block py-2 pr-4 pl-3 text-gray-500 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 dark:text-gray-400 md:dark:hover:text-yellow-500 dark:hover:bg-gray-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-500">Login</a>
+                <a href="/login" className="block py-2 pr-4 pl-3 text-gray-500 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 dark:text-gray-400 md:dark:hover:text-yellow-500 dark:hover:bg-gray-500 dark:hover:text-white hover:text-white md:dark:hover:bg-transparent dark:border-gray-500">Login</a>
               </li>
               <li>
-                <a href="/register" className='block py-2 pr-4 pl-3 text-gray-500 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-500 md:p-0 dark:text-gray-400 md:dark:hover:text-yellow-500 dark:hover:bg-gray-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-500 '>Register</a>
+                <a href="/register" className="block py-2 pr-4 pl-3 text-gray-500 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 dark:text-gray-400 md:dark:hover:text-yellow-500 dark:hover:bg-gray-500 dark:hover:text-white hover:text-white md:dark:hover:bg-transparent dark:border-gray-500">Register</a>
               </li>
+
             </ul>
           </div>
         </div>
@@ -40,4 +41,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbari

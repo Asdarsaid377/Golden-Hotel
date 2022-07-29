@@ -13,7 +13,6 @@ export default function Dashboard() {
     const [token, setToken] = useState([]);
     const [name, setName] = useState('');
     const [expire, setExpire] = useState('');
-    const [users, setUsers] = useState([]);
     const navigate = useHistory();
 
     const refreshToken = async () => {
@@ -29,7 +28,6 @@ export default function Dashboard() {
             }
         }
     }
-
     const axiosJWT = axios.create();
     axiosJWT.interceptors.request.use(async (config) => {
         const currentDate = new Date();
@@ -45,30 +43,9 @@ export default function Dashboard() {
     }, (error) => {
         return Promise.reject(error);
     });
-    const Logout = async () => {
-        try {
-            await axios.delete("http://localhost:5000/logout");
-            navigate("/")
-        } catch (error) {
-            console.log(error.message);
-        }
-    }
-    const getUsers = async () => {
-        try {
-            const response = await axiosJWT.get("http://localhost:5000/users", {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
-            setUsers(response.data);
-        } catch (error) {
 
-        }
-    }
     useEffect(() => {
-        getUsers();
         refreshToken();
-
     }, []);
     return (
         <>

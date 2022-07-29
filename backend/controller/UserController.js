@@ -28,9 +28,10 @@ export const deleteUsers = async (req, res) => {
 }
 
 export const Register = async (req, res) => {
-     const { name = "", email = "", password = "", confirmpassword = "" } = req.body
+     const { name = "", email = "", password = "", confirmpassword = "", rule = "" } = req.body
      if (name == "") return res.status(400).json({ msg: "Nama Harus Di Isi " })
      if (email == "") return res.status(400).json({ msg: "Email Harus Di Isi " })
+     // if (rule == "") return res.status(400).json({ msg: "Rule Harus Di Isi " })
      if (password == "") return res.status(400).json({ msg: "Password Harus Di Isi " })
      if (password !== confirmpassword) return res.status(400).json({ msg: "Pass Tidak Cocok " })
      const salt = await bcrypt.genSalt();
@@ -39,7 +40,8 @@ export const Register = async (req, res) => {
           await Users.create({
                name: name,
                email: email,
-               password: hashPassword
+               password: hashPassword,
+               rule: rule
           })
           res.json({ msg: "Berhasil Register" })
      } catch (error) {
