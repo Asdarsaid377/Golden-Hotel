@@ -1,6 +1,12 @@
-backend/node_modules
-frontend2/node_modules
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
 
-.env
-.vscode
-.vs
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
